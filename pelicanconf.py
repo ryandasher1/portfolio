@@ -1,11 +1,45 @@
 AUTHOR = 'Ryan Asher'
 SITENAME = "Ryan Asher"
-SITEURL = 'https://ryandeanasher.com'
-THEME = "C:/Users/ryanasher/Documents/Projects/pelican-themes/nice-blog"
-SIDEBAR_ABOUT = "Hi! I enjoy learning and creating. You can find some of my writing on this website, and some of the small games I've developed."
-SIDEBAR_DISPLAY = ['about', 'categories', 'tags']
+#SITEURL = 'https://ryandeanasher.com/'
+SITEURL = 'http://127.0.0.1:8000'
+THEME = "../pelican-themes/pelican-fh5co-marble"
+
+PLUGINS_PATH = ['../pelican-paths']
+PLUGINS = [
+    'i18n_subsites',
+    'tipue_search'
+]
+JINJA_ENVIRONMENT = {
+    'extensions': ['jinja2.ext.i18n']
+}
 
 PATH = 'content'
+
+LOGO = '/images/ryanface.jpg'
+
+STATIC_PATHS = [
+    'images',
+    'extra'
+]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+}
+
+HERO = [
+    {
+        'image': '/images/hero/randomized_stratego_2.jpg',
+        'title': "Hi, I'm Ryan!",
+        'text': "I'm an award-winning engineer with over a decade of experience in the media industry. In my spare time I like to write short stories and make simple videogames!",
+        'links': [
+        # {
+        #     'url': '/resume.pdf',
+        #     'text': 'Resume'
+        # }
+    ]
+    }
+]
+DISQUS_ON_PAGES = False
 
 TIMEZONE = 'America/Chicago'
 
@@ -25,8 +59,9 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+  ('Twitter', 'https://twitter.com/ryandeanasher'),
+)
 
 DEFAULT_PAGINATION = False
 
